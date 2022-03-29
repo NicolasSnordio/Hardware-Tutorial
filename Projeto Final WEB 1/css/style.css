@@ -12,9 +12,10 @@
 }
 
 :root {
-    --font-primaria: "Baloo 2", serif;
-    --font-secundaria: "Josefin Sans", serif;
-    --font-acoes: "Open Sans", serif;
+    --color-font-link: #d60fd6;
+    --font-primary: "Baloo 2", serif;
+    --font-secundary: "Josefin Sans", serif;
+    --font-actions: "Open Sans", serif;
 }
 
 .hamburguer {
@@ -32,7 +33,7 @@
 }
 
 .show-menu .hamburguer {
-    right: 17rem;
+    right: 14rem;
 }
 
 .line {
@@ -69,7 +70,7 @@
     align-items: center;
     background-color: #d60fd6;
     color: #c4c4c4;
-    font-family: var(--font-acoes);
+    font-family: var(--font-actions);
     opacity: 0;
 }
 
@@ -104,7 +105,7 @@ header {
     height: 100%;
     overflow: hidden;
     /* background-color: para mudar o fundo da imagem e consucutivamente o tom dela */
-    background-color: #4e4e4e;
+    background-color: #3a3939;
 }
 
 /* Para pegar especificamente a imagen de wrapper */
@@ -114,7 +115,7 @@ header {
     /* object-fit: serve para a imagem cobrir o espaço do wrapper */
     object-fit: cover;
     opacity: 0.5;
-    animation: zoom 18s ;
+    animation: zoom 10s ;
 }
 
 /* Animação do zoom usando KeyFrames */
@@ -130,17 +131,17 @@ header {
 
 .banner {
     position: absolute;
-    top: 17%;
-    left: 12%;
+    top: 30vh;
+    left: 10vw;
 }
 
 .banner h1 {
     color: #cecece;
     font-size: 5.4rem;
-    font-family: var(--font-primaria);
+    font-family: var(--font-primary);
     font-weight: 400;
     text-shadow: .3rem .2rem 2px #00000066;
-    line-height: 4rem;
+    line-height: 2rem;
     /* Para dar distancia entre o texto principal e o secundario */
     margin-bottom: 2rem;
     opacity: 0; /* Usado junto com o opacity do KeyFrame moveBanner */
@@ -158,17 +159,18 @@ header {
 }
 
 .banner p {
-    font-family: var(--font-secundaria);
+    font-family: var(--font-secundary);
     color: #cac9c9;
     font-size: 2rem;
+    line-height: 4rem;
     text-shadow: .3rem .2rem 2px #00000066;
     opacity: 0;
     animation: moveBanner 3s forwards;
 }
 
 .banner button {
-    font-family: var(--font-primaria);
-    color: #fff;
+    font-family: var(--font-primary);
+    color: rgb(0, 0, 0);
     opacity: 0;
     font-size: 1rem;
     text-transform: uppercase;
@@ -176,26 +178,24 @@ header {
     /* Usando um background-color com gradiente utilizando o site -uigradients- */
 
     /* Importação do site uigradients */
-    background-color: #800080;
-    background: -webkit-linear-gradient(to right, #ffc0cb, #800080);
-    background: linear-gradient(to left, #f3e0e4, #d60fd6);
+    background: #4AC29A;
+background: -webkit-linear-gradient(to right, #BDFFF3, #4AC29A);
+background: linear-gradient(to right, #BDFFF3, #4AC29A);
     padding: 1rem 3rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    animation: moveBanner 4s forwards;
+    animation: moveBanner 3s forwards;
+    transition: .3s;
 }
 
 .banner button:hover {
-    background-color: #800080;
-    background: -webkit-linear-gradient(to left #ffc0cb, #800080);
-    background: linear-gradient(to right, #f3e0e4, #d60fd6);
-    transform: translateX(-1px);
+    /* transform: translateX(-1px); */
     cursor: pointer;
 }
 
 .sidebar {
-    width: 20rem;
+    /* width: 17rem;  */
     height: 100vh;
     background-color: #242424;
     position: fixed;
@@ -222,7 +222,7 @@ header {
 }
 
 .menu-link {
-    font-family: var(--font-primaria);
+    font-family: var(--font-primary);
     font-size: 2rem;
     color: #c4c4c4;
     /* transition: para animação de cor neste caso (sempre especificar o que irei mudar) */
@@ -230,7 +230,7 @@ header {
 }
 
 .menu-link:hover {
-    color: #800080;
+    color: var(--color-font-link);
 }
 
 .social-media {
@@ -258,4 +258,45 @@ header {
     cursor: pointer;
     transform: translateY(-5px);
     cursor: pointer
+}
+
+@media (max-width: 720px) {
+    p{
+        text-align: start;
+    }
+}
+
+/* === Media Queries === */
+
+/* Extra Small (xs): Smartphone (portrait - retrato) */
+@media (min-width: 300px) {
+    .show-menu .sidebar {
+        width: 17rem;
+   }
+}
+
+/* Small (sm): Smartphone (landscape - paisagem) */
+@media (min-width: 576px) {
+ 
+}
+
+/* Medium (md): Tablet */
+@media (min-width: 768px) {
+ 
+}
+
+/* Large (lg): Notebook */
+@media (min-width: 992px) {
+   
+}
+
+/* Extra Large (xl): Computador (PC) */
+@media (min-width: 1200px) {
+  
+}
+
+@media (max-width: 720px) {
+    p{
+        text-align: start;
+    }
 }
